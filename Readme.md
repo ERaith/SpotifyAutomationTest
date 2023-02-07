@@ -16,6 +16,21 @@ IE: @dev, @smoke
 e.g. ./run_tests.sh dev
 ```
 
+## Automated Test Structure
+
+```
+    .
+    ├── cucumber.js                 # Import from dist from babel ts->js transpile
+    ├── src                         # Test files
+    │   ├── features                # Feature files
+    │   ├── pages                   # Page Object Model Files
+    │   └── reporter                # Cucmber html reporter configuration
+    │   └── step_definitions        # *step.ts files
+    │       └── setup               # Hooks and world creation
+    │   └── support                 # Options Helper for setting up our test globals from env
+    └── ...
+```
+
 ## Reports
 
 By default we configured the cucumber-report to open the status after steps complete.

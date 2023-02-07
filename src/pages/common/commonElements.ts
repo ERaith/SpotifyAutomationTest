@@ -9,14 +9,9 @@ const spotifyBanner = {
   spotifyBanner: '[role="banner"]',
 };
 
-const playlistSidebar = {
-  playlistContainer: '[data-testid="rootlist-container"]',
-};
-
 const commonElements = {
   ...topBar,
   ...spotifyBanner,
-  ...playlistSidebar,
 };
 
 export default commonElements;
