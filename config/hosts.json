@@ -1,0 +1,4 @@
+{
+    "localhost":"http://localhost:3000",
+    "prod":"https://open.spotify.com/"
+}
