@@ -11,10 +11,6 @@ const pageId: PageId = "webplayer";
 const pageRoute = "/";
 
 export default class SpotifyWebPlayerPage extends Page {
-  /**
-   * Get page elements
-   * @returns {Object} page elements
-   */
 
   constructor(driver: WebDriver, globalConfig: GlobalConfig) {
     super(driver, globalConfig, pageId, pageRoute);
@@ -176,8 +172,8 @@ export default class SpotifyWebPlayerPage extends Page {
     const playlists = await this.findElementsByCss("playlistItems");
     for (const playlist of playlists) {
       await playlist.click();
-      await this.driver.sendKeys(Keys.DELETE)
-      await this.driver.sendKeys(Keys.RETURN)
+      await this.driver.sendKeys(Keys.DELETE);
+      await this.driver.sendKeys(Keys.RETURN);
     }
   }
 }

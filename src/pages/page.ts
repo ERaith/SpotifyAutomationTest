@@ -8,9 +8,6 @@ import {
 } from "../env/global";
 import { commonElements } from "./index";
 
-/**
- * Page Class Methods
- */
 export default class Page {
   /**
    * Instantiate the object
@@ -32,6 +29,11 @@ export default class Page {
   pageRoute: PageRoute;
   globalConfig: GlobalConfig;
 
+  /**
+   * Page Class Methods
+   * Common would have any reused elements throughout the pages
+   * TODO seperate out into seperate classes, header, footer etc.
+   */
   get common() {
     return commonElements;
   }
@@ -50,6 +52,7 @@ export default class Page {
    * Match the title
    * @param {string} expectedTitle - expected title to match
    */
+  
   async navigate(): Promise<void> {
     await this.driver.get(this.url);
   }

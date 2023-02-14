@@ -36,19 +36,19 @@ export class ScenarioWorld extends World {
 
   globalConfig: GlobalConfig;
   globalVariables: GlobalVariables;
-  screen!: Screen;
+  driver!: WebDriver;
   page;
   sessionUserData: UserData;
 
-  async init(): Promise<Screen> {
+  async init(): Promise<WebDriver> {
     const browser = await this.newBrowser();
     const browserBuilder = await this.browserBuilder(browser);
     const driver = browserBuilder.build();
     await driver.manage().window().maximize();
     await driver.manage().setTimeouts({ implicit: 5000 });
 
-    this.screen = { driver };
-    return this.screen;
+    this.driver = driver;
+    return this.driver;
   }
 
   private newBrowser = async (): Promise<string> => {

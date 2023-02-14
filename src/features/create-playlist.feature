@@ -17,7 +17,7 @@ Feature: As a user I expect to be able to visit the home page
     And User checks total duration of the created playlist
     Then There should be no song duplicates
 
-  @smoke @dev
+  @dev
   Scenario: User can make a playlist for a 30 min road trip with no duplicates
     When User creates a playlist with name "Road Trip"
     Then User sees the playlist populate in their sidebar

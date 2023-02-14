@@ -1,4 +1,4 @@
-import { Before, After, AfterAll } from "@cucumber/cucumber";
+import { Before, After } from "@cucumber/cucumber";
 import { ScenarioWorld } from "./world";
 import { env } from "../../env/parseEnv";
 import * as fs from "fs";
@@ -11,14 +11,10 @@ Before(async function (scenario) {
 });
 
 After(async function (this: ScenarioWorld, scenario) {
-  const {
-    screen: { driver },
-  } = this;
-
   const scenarioStatus = scenario.result?.status;
 
   if (scenarioStatus === "FAILED") {
-    driver.takeScreenshot().then((image) => {
+    this.driver.takeScreenshot().then((image) => {
       this.attach(image, "image/png");
       fs.mkdirSync(env("SCREENSHOT_PATH"));
       fs.writeFileSync(
@@ -31,6 +27,6 @@ After(async function (this: ScenarioWorld, scenario) {
 
   // Sleep is in here as a hacky solution to ECONNREFUSED
   // caused by webdriver having an unresolved promise before quitting
-  await driver.sleep(2000);
-  await driver.quit();
+  await this.driver.sleep(2000);
+  await this.driver.quit();
 });

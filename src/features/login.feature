@@ -12,7 +12,7 @@ Feature: As a user I expect to be able to visit the home page
       | lastName  | Farnsworth                     |
     Then User should be shown thier account homepage
 
-  @smoke @dev
+  @dev
   Scenario Outline: User is shown a error when invalid credentials are used
     Given User tries to login with: "<email>" and "<password>"
     Then User should see the error message: "<message>"
