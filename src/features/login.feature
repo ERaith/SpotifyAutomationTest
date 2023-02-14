@@ -1,7 +1,7 @@
 Feature: As a user I expect to be able to visit the home page
 
   Background: 
-    Given User is on the "Login" page
+    Given User is on the Login page
 
   @smoke @dev
   Scenario: User should successfully log in to their account

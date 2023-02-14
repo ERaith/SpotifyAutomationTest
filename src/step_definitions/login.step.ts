@@ -1,9 +1,9 @@
 import { DataTable, Given, Then, When } from "@cucumber/cucumber";
-import { PageId, UserData } from "../env/global";
+import { UserData } from "../env/global";
 import { SpotifyLoginPage } from "../pages";
 const { expect } = require("chai");
 
-Given(/User is on the "([^"]*)" page$/, async function (pageId: PageId) {
+Given(/User is on the Login page$/, async function () {
   this.page = await new SpotifyLoginPage(this.driver, this.globalConfig);
   await this.page.navigate();
 });

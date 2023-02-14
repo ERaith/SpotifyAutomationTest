@@ -1,7 +1,7 @@
 Feature: As a user I expect to be able to visit the home page
 
   Background: 
-    Given User is on the "Login" page
+    Given User is on the Login page
     And User logs in with:
       | username  | kobayshimaru+testing@gmail.com |
       | password  | HzXidmMRpEiH86A                |

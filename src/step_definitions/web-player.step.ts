@@ -1,6 +1,5 @@
 import { Given, Then, When } from "@cucumber/cucumber";
 import SpotifyWebPlayerPage from "../pages/web-player-page";
-import { ScenarioWorld } from "./setup/world";
 const { expect } = require("chai");
 
 Given("User navigates to the web player", async function () {
