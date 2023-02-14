@@ -6,15 +6,11 @@ import {
   setDefaultTimeout,
 } from "@cucumber/cucumber";
 import { env } from "../../env/parseEnv";
-import { GlobalConfig, GlobalVariables, UserData } from "../../env/global";
+import { GlobalConfig, UserData } from "../../env/global";
 import { stringIsOfOptions } from "../../support/options-helper";
 
 import chrome from "selenium-webdriver/chrome";
 import firefox from "selenium-webdriver/firefox";
-
-export type Screen = {
-  driver: WebDriver;
-};
 
 setDefaultTimeout(60 * 1000);
 
@@ -23,8 +19,6 @@ export class ScenarioWorld extends World {
     super(options);
 
     this.globalConfig = options.parameters as GlobalConfig;
-
-    this.globalVariables = { currentScreen: "" };
 
     this.sessionUserData = {
       username: "",
@@ -35,7 +29,6 @@ export class ScenarioWorld extends World {
   }
 
   globalConfig: GlobalConfig;
-  globalVariables: GlobalVariables;
   driver!: WebDriver;
   page;
   sessionUserData: UserData;

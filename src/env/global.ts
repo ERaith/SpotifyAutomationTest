@@ -9,7 +9,6 @@ export type PageElementMappings = Record<
   PageId,
   Record<ElementKey, ElementLocator>
 >;
-export type GlobalVariables = { [key: string]: string };
 
 export type GlobalConfig = {
   hostsConfig: HostsConfig;
